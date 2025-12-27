@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravila privatnosti - Eco Code</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. GLAVNE POSTAVKE --- */
+        :root {
+            --glavna-boja: #1AD61E;
+            --tekst-naslov: #57606f;
+            --tekst-sivi: #2f3542;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f9f9f9; display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* --- 2. ZAGLAVLJE (Isto kao na naslovnoj) --- */
+        header {
+            background: var(--glavna-boja);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content { display: flex; align-items: center; gap: 15px; }
+        .logo { height: 85px; width: auto; }
+        .title { color: #fff; font-size: 28px; font-weight: 700; }
+
+        /* --- 3. GLAVNI OKVIR ZA TEKST --- */
+        .policy-container {
+            max-width: 900px;
+            margin: 50px auto; /* Centrirano na sredini */
+            background: #fff;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--tekst-naslov);
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--glavna-boja); /* Zeleni naslovi */
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--tekst-sivi);
+            line-height: 1.8; /* Veći razmak između redova za lakše čitanje */
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Isticanje linkova u tekstu */
+        .highlight {
+            color: var(--glavna-boja);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Gumb za povratak */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .back-btn:hover { color: var(--glavna-boja); }
+
+        /* Footer s datumom */
+        .footer-note {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .policy-container { margin: 20px; padding: 30px; }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img class="logo" src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/code%20(1).png" alt="Eco Code Logo">
+            <div class="title">Eco Code</div>
+        </div>
+    </header>
+
+    <div class="policy-container">
+        
+        <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Natrag na naslovnu</a>
+
+        <h1>Pravila privatnosti i uvjeti korištenja</h1>
+
+        <div class="section">
+            <h2>1. Opće informacije</h2>
+            <p>Ova web stranica je moj osobni projekt nastao iz ljubavi prema programiranju i IT-u. Svrha stranice je dijeljenje znanja, projekata i ideja. Korištenjem ove stranice pristajete na ove uvjete.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Prikupljanje podataka</h2>
+            <p>Kao autor ove stranice, ja <strong>ne prikupljam</strong> vaše osobne podatke (poput imena, adresa ili brojeva telefona) osim ako mi ih sami ne pošaljete putem kontakt forme ili e-maila.</p>
+            <p>Budući da je stranica izrađena putem platforme Google Sites (ili sličnih alata), Google može automatski prikupljati određene tehničke podatke o vašem posjetu (npr. IP adresa, tip preglednika) radi statistike i sigurnosti. Više o tome možete pročitati u Googleovim pravilima privatnosti.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Kolačići (Cookies)</h2>
+            <p>Ova stranica koristi osnovne kolačiće koji su nužni za rad platforme. Kolačići nam pomažu da znamo koliko ljudi posjećuje stranicu i koji su sadržaji najzanimljiviji. Svojim preglednikom možete upravljati kolačićima ili ih obrisati u bilo kojem trenutku.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Intelektualno vlasništvo</h2>
+            <p>Sav sadržaj na ovoj stranici (tekstovi, kodovi, slike), osim ako nije drugačije navedeno, moje je autorsko djelo. Možete ga koristiti u obrazovne svrhe uz navođenje izvora, ali nije dopušteno kopiranje sadržaja u komercijalne svrhe bez moje dozvole.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Odricanje od odgovornosti</h2>
+            <p>Sve informacije i tutoriali na ovoj stranici služe isključivo u informativne i obrazovne svrhe. Iako se trudim da sve bude točno, ne odgovaram za eventualne pogreške ili štetu nastalu korištenjem informacija s ove stranice.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Kontakt</h2>
+            <p>Ako imate bilo kakvih pitanja o ovim pravilima, slobodno me kontaktirajte putem e-maila na: <span class="highlight">tvoj-email@primjer.com</span></p>
+        </div>
+
+        <div class="footer-note">
+            Zadnja izmjena: 20. prosinca 2025.
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Code</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. GLAVNE POSTAVKE --- */
+        :root {
+            --glavna-boja: #1AD61E;
+            --tekst-naslov: #57606f;
+            --tekst-sivi: #2f3542;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* --- 2. ZAGLAVLJE (HEADER) --- */
+        header {
+            background: var(--glavna-boja);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .header-content { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
+
+        /* --- OVDJE JE PROMJENA VELIČINE LOGA --- */
+        .logo { 
+            height: 85px; /* Povećano s 50px na 85px */
+            width: auto; 
+        }
+        
+        .title { color: #fff; font-size: 28px; font-weight: 700; }
+
+        /* --- 3. GLAVNI SADRŽAJ (SREDINA) --- */
+        .main-container {
+            display: flex;
+            flex: 1; 
+            align-items: center;
+            justify-content: center;
+            padding: 50px 10%;
+            gap: 60px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Lijeva strana - Mobitel */
+        .phone-section img {
+            width: 100%;
+            max-width: 320px;
+            filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.2));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Desna strana - Tekstovi i Boxovi */
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+        }
+
+        .main-heading {
+            font-size: 42px;
+            color: var(--tekst-naslov);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--tekst-sivi);
+            margin-bottom: 20px;
+        }
+
+        /* --- TVOJI BOXOVI ZA TEKST --- */
+        .info-box {
+            background: #f1f2f6; 
+            padding: 20px;
+            border-left: 5px solid var(--glavna-boja); 
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .info-box h3 { color: #333; margin-bottom: 5px; }
+        .info-box p { color: #666; font-size: 14px; }
+
+        /* --- 4. DNO STRANICE (FOOTER) --- */
+        .bottom-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin-top: auto; 
+        }
+
+        .btn {
+            background: #000; color: #fff; padding: 12px 30px; border-radius: 8px;
+            text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); cursor: pointer; }
+        .fa-android { font-size: 36px; color: #a4c639; margin-right: 15px; }
+        .btn-txt { text-align: left; line-height: 1; }
+        .small { font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 2px;}
+        .big { font-size: 22px; font-weight: 700; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        @media (max-width: 900px) {
+            .main-container { flex-direction: column; text-align: center; }
+            .text-section { align-items: center; }
+            .info-box { text-align: left; }
+            /* Na mobitelu malo smanjimo logo da ne bude prevelik */
+            .logo { height: 60px; }
+            header { height: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/code%20(1).png" alt="Girl in a jacket" width="250" height="240">
+
+            <div class="title">Eco Code</div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="phone-section">
+            <img src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/mobileicon.png" alt="Aplikacija">
+        </div>
+
+        <div class="text-section">
+            
+            <h2 class="main-heading">Izmjeri svoj utjecaj na<br>naš planet.</h2>
+            <p class="subtitle">Eco Code moderni ekološki savjetnik</p>
+
+            <div class="info-box">
+                <h3>Prva prednost</h3>
+                <p>Zaboravi na komplicirane kalkulatore. Naše intuitivno sučelje omogućuje ti da dobiješ precizan izračun svog ugljičnog 
+                otiska u manje od minute.</p>
+            </div>
+            <div class="info-box">
+              <h3>Druga prednost</h3>
+              <p>Biti ekološki osviješten često znači i biti ekonomičan. Otkrij kako smanjenjem otpada i potrošnje energije možeš 
+              uštedjeti značajan iznos na kraju mjeseca.</p>
+            </div>
+            <div class="info-box">
+                <h3>O Developerima</h3>
+                <a href="https://sites.google.com/view/noahusicdevlab">Noa Husić</a>
+                <br>
+                <p>Drugi developer izrađuje svoju stranicu...</p>
+            </div>
+            
+            </div>
+    </div>
+
+    <footer class="bottom-section">
+        <p style="margin-bottom: 15px; color: #666;">Preuzmite odmah.</p>
+        
+        <a href="#" class="btn" onclick="alert('Ovdje će biti download!')">
+            <i class="fab fa-android"></i> 
+            <div class="btn-txt">
+                <span class="small">Download for</span>
+                <span class="big">Android</span>
+            </div>
+        </a>
+        
+        <br> <a href="pravila.html" class="legal-link">Pravila privatnosti i uvjeti korištenja</a>
+    </footer>
+    </footer>
+
+</body>
+</html>
