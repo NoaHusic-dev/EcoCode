@@ -27,7 +27,7 @@
             min-height: 100vh;
         }
 
-        /* --- HEADER (Isti kao na početnoj) --- */
+        /* --- HEADER (Isti kao na novoj početnoj) --- */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -62,7 +62,7 @@
         }
         nav a:hover { color: var(--glavna); }
 
-        /* --- SADRŽAJ PRAVILA --- */
+        /* --- SADRŽAJ --- */
         .policy-container {
             max-width: 900px;
             margin: 50px auto;
@@ -71,7 +71,7 @@
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid #eee;
-            flex: 1; /* Gura footer na dno */
+            flex: 1;
         }
 
         .back-link {
@@ -123,17 +123,9 @@
             margin-top: 50px;
         }
 
-        .footer-note {
-            opacity: 0.6;
-            font-size: 13px;
-            margin-top: 10px;
-        }
-
         @media (max-width: 768px) {
             .policy-container { margin: 20px; padding: 30px; }
             h1 { font-size: 28px; }
-            .logo { height: 50px; }
-            .title { font-size: 22px; }
         }
     </style>
 </head>
@@ -146,13 +138,13 @@
                 <div class="title">Eco<span>Code</span></div>
             </div>
             <nav>
-                <a href="https://noahusic-dev.github.io/EcoCode/"><i class="fas fa-home"></i> Početna</a>
+                <a href="index.html">Početna</a>
             </nav>
         </div>
     </header>
 
     <main class="policy-container">
-        <a href="https://noahusic-dev.github.io/EcoCode/" class="back-link">
+        <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Natrag na naslovnu
         </a>
 
@@ -160,42 +152,23 @@
 
         <div class="section">
             <h2><i class="fas fa-info-circle"></i> 1. Opće informacije</h2>
-            <p>Ova web stranica je timski projekt dva developera: <span class="highlight">Noa Husić</span> (web development) i <span class="highlight">Lovro Crnković</span> (objava i vođenje aplikacije). Svrha stranice je promocija i sigurno preuzimanje Eco Code aplikacije.</p>
+            <p>Ova web stranica je timski napravljena od strane dva developera <span class="highlight">Noa Husić</span> te zaslužan za objavu aplikacije <span class="highlight">Lovro Crnković</span>. Svrha web stranice je promocija aplikacije Eco Code te njezino preuzimanje.</p>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-user-shield"></i> 2. Prikupljanje podataka</h2>
-            <p>Vaša privatnost nam je na prvom mjestu. Mi <strong>ne prikupljamo</strong> vaše osobne podatke (ime, adresa, broj telefona) niti ih prodajemo trećim stranama. Podatke dobivamo isključivo ako nas sami kontaktirate putem e-maila.</p>
+            <p>Kao autori ove stranice, mi <strong>ne prikupljamo</strong> vaše osobne podatke osim ako nam ih sami ne pošaljete putem kontakt forme ili e-maila.</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-cookie-bite"></i> 3. Kolačići (Cookies)</h2>
-            <p>Koristimo samo osnovne tehničke kolačiće potrebne za stabilan rad stranice i anonimnu statistiku posjeta kako bismo znali koliko je korisnika zainteresirano za ekologiju.</p>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-copyright"></i> 4. Intelektualno vlasništvo</h2>
-            <p>Sav sadržaj (tekst, dizajn i kôd) autorsko je djelo razvojnog tima Eco Code. Neovlašteno kopiranje sadržaja u komercijalne svrhe nije dopušteno bez prethodne suglasnosti.</p>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-envelope-open-text"></i> 5. Kontakt</h2>
-            <p>Za sva pitanja o privatnosti ili radu aplikacije, obratite se na:</p>
-            <p><span class="highlight">noahusic550@gmail.com</span></p>
-            <p><em>Molimo koristite predmet poruke: "Pitanje za Eco Code"</em></p>
-        </div>
-
-        <div class="footer-note">
-            Zadnja izmjena: 27. prosinca 2025.
+            <h2><i class="fas fa-envelope"></i> 3. Kontakt</h2>
+            <p>Slobodno me kontaktirajte na: <span class="highlight">noahusic550@gmail.com</span></p>
         </div>
     </main>
 
     <footer>
         <p>© 2025 Eco Code Tim. Sva prava pridržana.</p>
-        <p class="footer-note">Stranica je optimizirana za sigurnost i privatnost korisnika.</p>
     </footer>
 
 </body>
 </html>
-
-
