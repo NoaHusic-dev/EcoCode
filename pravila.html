@@ -9,97 +9,131 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 1. GLAVNE POSTAVKE --- */
         :root {
-            --glavna-boja: #1AD61E;
-            --tekst-naslov: #57606f;
-            --tekst-sivi: #2f3542;
+            --glavna: #1AD61E;
+            --tamna: #2f3542;
+            --siva: #f1f2f6;
+            --tekst-p: #57606f;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f9f9f9; display: flex; flex-direction: column; min-height: 100vh; }
-
-        /* --- 2. ZAGLAVLJE (Isto kao na naslovnoj) --- */
-        header {
-            background: var(--glavna-boja);
-            height: 100px;
+        
+        body { 
+            background-color: #fcfcfc;
+            color: var(--tamna);
+            line-height: 1.6;
             display: flex;
-            align-items: center;
-            padding: 0 5%; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        .header-content { display: flex; align-items: center; gap: 15px; }
-        .logo { height: 85px; width: auto; }
-        .title { color: #fff; font-size: 28px; font-weight: 700; }
+        /* --- HEADER (Isti kao na početnoj) --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--siva);
+        }
 
-        /* --- 3. GLAVNI OKVIR ZA TEKST --- */
+        .header-content { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            width: 100%; 
+        }
+
+        .logo-box { display: flex; align-items: center; gap: 15px; }
+        .logo { height: 70px; width: auto; }
+        .title { font-size: 28px; font-weight: 700; color: var(--tamna); letter-spacing: -1px; }
+        .title span { color: var(--glavna); }
+
+        nav a {
+            text-decoration: none;
+            color: var(--tamna);
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--glavna); }
+
+        /* --- SADRŽAJ PRAVILA --- */
         .policy-container {
             max-width: 900px;
-            margin: 50px auto; /* Centrirano na sredini */
-            background: #fff;
-            padding: 60px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin: 50px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            flex: 1; /* Gura footer na dno */
         }
 
-        h1 {
-            color: var(--tekst-naslov);
-            font-size: 32px;
-            margin-bottom: 40px;
-            text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--glavna);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .back-link:hover { transform: translateX(-5px); }
+
+        h1 { 
+            font-size: 36px; 
+            margin-bottom: 30px; 
+            color: var(--tamna);
+            border-bottom: 3px solid var(--siva);
+            padding-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .section { margin-bottom: 35px; }
+        h2 { 
+            font-size: 22px; 
+            color: var(--glavna); 
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        h2 {
-            color: var(--glavna-boja); /* Zeleni naslovi */
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: var(--tekst-sivi);
-            line-height: 1.8; /* Veći razmak između redova za lakše čitanje */
-            font-size: 15px;
-            margin-bottom: 10px;
-        }
-
-        /* Isticanje linkova u tekstu */
+        p { color: var(--tekst-p); font-size: 16px; margin-bottom: 15px; }
+        
         .highlight {
-            color: var(--glavna-boja);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Gumb za povratak */
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #666;
-            text-decoration: none;
-            font-size: 14px;
+            background: #e8fce9;
+            color: #15b319;
+            padding: 2px 8px;
+            border-radius: 5px;
             font-weight: 600;
         }
-        .back-btn:hover { color: var(--glavna-boja); }
 
-        /* Footer s datumom */
-        .footer-note {
-            margin-top: 50px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            font-size: 13px;
-            color: #999;
+        /* --- FOOTER --- */
+        footer {
+            background: var(--tamna);
+            padding: 40px 20px;
             text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-note {
+            opacity: 0.6;
+            font-size: 13px;
+            margin-top: 10px;
         }
 
         @media (max-width: 768px) {
             .policy-container { margin: 20px; padding: 30px; }
-            h1 { font-size: 24px; }
+            h1 { font-size: 28px; }
+            .logo { height: 50px; }
+            .title { font-size: 22px; }
         }
     </style>
 </head>
@@ -107,56 +141,61 @@
 
     <header>
         <div class="header-content">
-            <img class="logo" src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/code%20(1).png" alt="Eco Code Logo">
-            <div class="title">Eco Code</div>
+            <div class="logo-box">
+                <img src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/code%20(1).png" alt="logo" class="logo">
+                <div class="title">Eco<span>Code</span></div>
+            </div>
+            <nav>
+                <a href="https://noahusic-dev.github.io/EcoCode/"><i class="fas fa-home"></i> Početna</a>
+            </nav>
         </div>
     </header>
 
-    <div class="policy-container">
-        <a href="https://noahusic-dev.github.io/EcoCode/">Natrag na naslovnu</a>
-        <h1>Pravila privatnosti i uvjeti korištenja</h1>
+    <main class="policy-container">
+        <a href="https://noahusic-dev.github.io/EcoCode/" class="back-link">
+            <i class="fas fa-arrow-left"></i> Natrag na naslovnu
+        </a>
+
+        <h1>Pravila privatnosti</h1>
 
         <div class="section">
-            <h2>1. Opće informacije</h2>
-            <p>Ova web stranica je timski napravljena od strane dva developera Noa Husić te zaslužan za objavu aplikacije Lovro Crnković. Svrha web stranice je promocija aplikacije Eco Code te njezino preuzimanje apk. Korištenjem ove stranice pristajete na ove uvjete.</p>
+            <h2><i class="fas fa-info-circle"></i> 1. Opće informacije</h2>
+            <p>Ova web stranica je timski projekt dva developera: <span class="highlight">Noa Husić</span> (web development) i <span class="highlight">Lovro Crnković</span> (objava i vođenje aplikacije). Svrha stranice je promocija i sigurno preuzimanje Eco Code aplikacije.</p>
         </div>
 
         <div class="section">
-            <h2>2. Prikupljanje podataka</h2>
-            <p>Kao autori ove stranice, mi <strong>ne prikupljamo</strong> vaše osobne podatke (poput imena, adresa ili brojeva telefona) osim ako mi ih sami ne pošaljete putem kontakt forme ili e-maila.</p>
+            <h2><i class="fas fa-user-shield"></i> 2. Prikupljanje podataka</h2>
+            <p>Vaša privatnost nam je na prvom mjestu. Mi <strong>ne prikupljamo</strong> vaše osobne podatke (ime, adresa, broj telefona) niti ih prodajemo trećim stranama. Podatke dobivamo isključivo ako nas sami kontaktirate putem e-maila.</p>
         </div>
 
         <div class="section">
-            <h2>3. Kolačići (Cookies)</h2>
-            <p>Ova stranica koristi osnovne kolačiće koji su nužni za rad platforme. Kolačići nam pomažu da znamo koliko ljudi posjećuje stranicu i koji su sadržaji najzanimljiviji. Svojim preglednikom možete upravljati kolačićima ili ih obrisati u bilo kojem trenutku.</p>
+            <h2><i class="fas fa-cookie-bite"></i> 3. Kolačići (Cookies)</h2>
+            <p>Koristimo samo osnovne tehničke kolačiće potrebne za stabilan rad stranice i anonimnu statistiku posjeta kako bismo znali koliko je korisnika zainteresirano za ekologiju.</p>
         </div>
 
         <div class="section">
-            <h2>4. Intelektualno vlasništvo</h2>
-            <p>Sav sadržaj na ovoj stranici (tekstovi, kodovi, slike), osim ako nije drugačije navedeno, naše je autorsko djelo. Nije dopušteno kopiranje sadržaja u komercijalne svrhe bez naše dozvole.</p>
+            <h2><i class="fas fa-copyright"></i> 4. Intelektualno vlasništvo</h2>
+            <p>Sav sadržaj (tekst, dizajn i kôd) autorsko je djelo razvojnog tima Eco Code. Neovlašteno kopiranje sadržaja u komercijalne svrhe nije dopušteno bez prethodne suglasnosti.</p>
         </div>
 
         <div class="section">
-            <h2>5. Odricanje od odgovornosti</h2>
-            <p>Sve informacije na ovoj stranici služe isključivo u informativne i obrazovne svrhe. Ne odgovaramo za eventualne pogreške ili štetu nastalu korištenjem informacija s ove stranice.</p>
-        </div>
-
-        <div class="section">
-            <h2>6. Kontakt</h2>
-            <p>Ako imate bilo kakvih pitanja o ovim pravilima, slobodno me kontaktirajte putem e-maila na: <span class="highlight">noahusic550@gmail.com</span></p>
-            <p>Molim vas da navedete predmet poruke "Pitanje za Eco Code"</p>
+            <h2><i class="fas fa-envelope-open-text"></i> 5. Kontakt</h2>
+            <p>Za sva pitanja o privatnosti ili radu aplikacije, obratite se na:</p>
+            <p><span class="highlight">noahusic550@gmail.com</span></p>
+            <p><em>Molimo koristite predmet poruke: "Pitanje za Eco Code"</em></p>
         </div>
 
         <div class="footer-note">
             Zadnja izmjena: 27. prosinca 2025.
         </div>
+    </main>
 
-    </div>
+    <footer>
+        <p>© 2025 Eco Code Tim. Sva prava pridržana.</p>
+        <p class="footer-note">Stranica je optimizirana za sigurnost i privatnost korisnika.</p>
+    </footer>
 
 </body>
-
 </html>
-
-
 
 
