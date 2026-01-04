@@ -1,1 +1,174 @@
-abc
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravila privatnosti - Eco Code</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --glavna: #1AD61E;
+            --tamna: #2f3542;
+            --siva: #f1f2f6;
+            --tekst-p: #57606f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            background-color: #fcfcfc;
+            color: var(--tamna);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER (Isti kao na novoj početnoj) --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--siva);
+        }
+
+        .header-content { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            width: 100%; 
+        }
+
+        .logo-box { display: flex; align-items: center; gap: 15px; }
+        .logo { height: 70px; width: auto; }
+        .title { font-size: 28px; font-weight: 700; color: var(--tamna); letter-spacing: -1px; }
+        .title span { color: var(--glavna); }
+
+        nav a {
+            text-decoration: none;
+            color: var(--tamna);
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--glavna); }
+
+        /* --- SADRŽAJ --- */
+        .policy-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            flex: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--glavna);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .back-link:hover { transform: translateX(-5px); }
+
+        h1 { 
+            font-size: 36px; 
+            margin-bottom: 30px; 
+            color: var(--tamna);
+            border-bottom: 3px solid var(--siva);
+            padding-bottom: 15px;
+        }
+
+        .section { margin-bottom: 35px; }
+        h2 { 
+            font-size: 22px; 
+            color: var(--glavna); 
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p { color: var(--tekst-p); font-size: 16px; margin-bottom: 15px; }
+        
+        .highlight {
+            background: #e8fce9;
+            color: #15b319;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--tamna);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .policy-container { margin: 20px; padding: 30px; }
+            h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-box">
+                <img src="https://uploads.onecompiler.io/448trk5qk/448trhqzt/code%20(1).png" alt="logo" class="logo">
+                <div class="title">Eco<span>Code</span></div>
+            </div>
+            <nav>
+                <a href="index.html">Početna</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="policy-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Natrag na naslovnu
+        </a>
+
+        <h1>Pravila privatnosti</h1>
+
+        <div class="section">
+            <h2><i class="fas fa-info-circle"></i> 1. Opće informacije</h2>
+            <p>Ova web stranica je timski napravljena od strane dva developera <span class="highlight">Noa Husić</span> te zaslužan za objavu aplikacije <span class="highlight">Lovro Crnković</span>. Svrha web stranice je promocija aplikacije Eco Code te njezino preuzimanje.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-user-shield"></i> 2. Prikupljanje podataka</h2>
+            <p>Kao autori ove stranice, mi <strong>ne prikupljamo</strong> vaše osobne podatke osim ako nam ih sami ne pošaljete putem kontakt forme ili e-maila.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-envelope"></i> 3. Kontakt</h2>
+            <p>Slobodno me kontaktirajte na: <span class="highlight">noahusic550@gmail.com</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Eco Code Tim. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>
