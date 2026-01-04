@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Napredak</title>
+    <title>Napredak - Eco Code</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,9 +11,13 @@
     <style>
         :root {
             --glavna: #1AD61E;
+            --glavna-light: #e8fce9;
             --tamna: #2f3542;
             --siva: #f1f2f6;
             --tekst-p: #57606f;
+            --zavrseno: #1AD61E;
+            --u-tijeku: #ffa502;
+            --ceka: #ced6e0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -27,7 +31,7 @@
             min-height: 100vh;
         }
 
-        /* --- HEADER (Isti kao na novoj početnoj) --- */
+        /* --- HEADER --- */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -63,51 +67,110 @@
         nav a:hover { color: var(--glavna); }
 
         /* --- SADRŽAJ --- */
-        .policy-container {
+        main {
             max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid #eee;
+            margin: 40px auto;
+            padding: 0 20px;
             flex: 1;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--glavna);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 25px;
-            transition: 0.3s;
+        .container-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
         }
-        .back-link:hover { transform: translateX(-5px); }
 
         h1 { 
-            font-size: 36px; 
-            margin-bottom: 30px; 
+            font-size: 32px; 
+            margin-bottom: 40px; 
+            text-align: center;
             color: var(--tamna);
-            border-bottom: 3px solid var(--siva);
-            padding-bottom: 15px;
         }
 
-        .section { margin-bottom: 35px; }
-        h2 { 
-            font-size: 22px; 
-            color: var(--glavna); 
-            margin-bottom: 12px;
+        /* --- BUBBLE PROGRESS (TIMELINE) --- */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            list-style: none;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--siva);
+            border-radius: 10px;
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        /* Kružići (Bubbles) */
+        .step::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--ceka);
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        /* Boje za statuse */
+        .step.done::before { border-color: var(--zavrseno); background: var(--zavrseno); }
+        .step.active::before { border-color: var(--u-tijeku); background: white; }
+
+        .step-content {
+            background: var(--siva);
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .step.active .step-content {
+            background: var(--glavna-light);
+            border-left: 5px solid var(--u-tijeku);
+        }
+
+        .step.done .step-content {
+            background: #f8fff8;
+            opacity: 0.8;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        p { color: var(--tekst-p); font-size: 16px; margin-bottom: 15px; }
+        .step p { font-size: 14px; color: var(--tekst-p); margin: 0; }
         
+        .badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-left: auto;
+        }
+        .badge.done { background: var(--glavna); color: white; }
+        .badge.process { background: var(--u-tijeku); color: white; }
+
         .highlight {
-            background: #e8fce9;
+            background: var(--glavna-light);
             color: #15b319;
             padding: 2px 8px;
             border-radius: 5px;
@@ -117,15 +180,16 @@
         /* --- FOOTER --- */
         footer {
             background: var(--tamna);
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
             color: white;
             margin-top: 50px;
         }
 
         @media (max-width: 768px) {
-            .policy-container { margin: 20px; padding: 30px; }
-            h1 { font-size: 28px; }
+            main { margin: 20px auto; }
+            .container-card { padding: 25px; }
+            h1 { font-size: 24px; }
         }
     </style>
 </head>
@@ -143,26 +207,61 @@
         </div>
     </header>
 
-    <main class="policy-container">
-        <a href="index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Natrag na naslovnu
-        </a>
+    <main>
+        <div class="container-card">
+            <h1><i class="fas fa-tasks"></i> Napredak Projekta</h1>
 
-        <h1>Pravila privatnosti</h1>
+            <div class="timeline">
+                
+                <div class="step done">
+                    <div class="step-content">
+                        <h3><i class="fas fa-lightbulb"></i> Ideja i Planiranje <span class="badge done">Završeno</span></h3>
+                        <p>Definiranje glavnih funkcionalnosti Eco Code aplikacije i dizajniranje korisničkog sučelja.</p>
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2><i class="fas fa-info-circle"></i> 1. Opće informacije</h2>
-            <p>Ova web stranica je timski napravljena od strane dva developera <span class="highlight">Noa Husić</span> te zaslužan za objavu aplikacije <span class="highlight">Lovro Crnković</span>. Svrha web stranice je promocija aplikacije Eco Code te njezino preuzimanje.</p>
-        </div>
+                <div class="step done">
+                    <div class="step-content">
+                        <h3><i class="fas fa-code"></i> Izrada Web Stranice <span class="badge done">Završeno</span></h3>
+                        <p>Web stranica za promociju je online. Autori: <span class="highlight">Noa Husić</span> i <span class="highlight">Lovro Crnković</span>.</p>
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2><i class="fas fa-user-shield"></i> 2. Prikupljanje podataka</h2>
-            <p>Kao autori ove stranice, mi <strong>ne prikupljamo</strong> vaše osobne podatke osim ako nam ih sami ne pošaljete putem kontakt forme ili e-maila.</p>
-        </div>
+                <div class="step active">
+                    <div class="step-content">
+                        <h3><i class="fas fa-android"></i> Projekt u izradi (App) <span class="badge process">U tijeku</span></h3>
+                        <p>Trenutno radimo na programiranju glavnih funkcija Android aplikacije u Android Studiju.</p>
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2><i class="fas fa-envelope"></i> 3. Kontakt</h2>
-            <p>Slobodno me kontaktirajte na: <span class="highlight">noahusic550@gmail.com</span></p>
+                <div class="step">
+                    <div class="step-content">
+                        <h3><i class="fas fa-file-alt"></i> Dokumentiranje</h3>
+                        <p>Pisanje tehničke dokumentacije i uputa za korisnike.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <h3><i class="fas fa-vial"></i> Testiranje i Završavanje</h3>
+                        <p>Provjera bugova i optimizacija koda prije puštanja u rad.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <h3><i class="fas fa-rocket"></i> Zadnji korak: Objava</h3>
+                        <p>Službeno lansiranje Eco Code aplikacije na tržište.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+            
+            <p style="text-align: center; font-size: 14px;">
+                Imate pitanja? Kontaktiraj nas na: <span class="highlight">noahusic550@gmail.com</span>
+            </p>
         </div>
     </main>
 
