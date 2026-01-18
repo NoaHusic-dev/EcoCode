@@ -84,12 +84,18 @@
 
         h1 { 
             font-size: 32px; 
-            margin-bottom: 40px; 
+            margin-bottom: 10px; 
             text-align: center;
             color: var(--tamna);
         }
 
-        /* --- BUBBLE PROGRESS (TIMELINE) --- */
+        .progress-description {
+            text-align: center;
+            color: var(--tekst-p);
+            margin-bottom: 40px;
+        }
+
+        /* --- TIMELINE --- */
         .timeline {
             position: relative;
             padding-left: 40px;
@@ -100,8 +106,8 @@
             content: '';
             position: absolute;
             left: 17px;
-            top: 0;
-            bottom: 0;
+            top: 5px;
+            bottom: 5px;
             width: 4px;
             background: var(--siva);
             border-radius: 10px;
@@ -109,10 +115,10 @@
 
         .step {
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        /* Kružići (Bubbles) */
+        /* Kružići */
         .step::before {
             content: '';
             position: absolute;
@@ -141,11 +147,11 @@
         .step.active .step-content {
             background: var(--glavna-light);
             border-left: 5px solid var(--u-tijeku);
+            transform: scale(1.02);
         }
 
         .step.done .step-content {
             background: #f8fff8;
-            opacity: 0.8;
         }
 
         .step h3 {
@@ -153,6 +159,8 @@
             margin-bottom: 5px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 10px;
         }
 
@@ -161,35 +169,35 @@
         .badge {
             font-size: 10px;
             text-transform: uppercase;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 20px;
             font-weight: 700;
-            margin-left: auto;
         }
         .badge.done { background: var(--glavna); color: white; }
         .badge.process { background: var(--u-tijeku); color: white; }
 
         .highlight {
-            background: var(--glavna-light);
+            background: rgba(26, 214, 30, 0.1);
             color: #15b319;
-            padding: 2px 8px;
-            border-radius: 5px;
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: 600;
         }
 
         /* --- FOOTER --- */
         footer {
             background: var(--tamna);
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             color: white;
-            margin-top: 50px;
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
             main { margin: 20px auto; }
-            .container-card { padding: 25px; }
+            .container-card { padding: 20px; }
             h1 { font-size: 24px; }
+            .step h3 { font-size: 16px; }
         }
     </style>
 </head>
@@ -202,7 +210,7 @@
                 <div class="title">Eco<span>Code</span></div>
             </div>
             <nav>
-                <a href="index.html">Početna</a>
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Povratak</a>
             </nav>
         </div>
     </header>
@@ -210,64 +218,79 @@
     <main>
         <div class="container-card">
             <h1><i class="fas fa-tasks"></i> Napredak Projekta</h1>
+            <p class="progress-description">Pratite razvoj EcoCode ekosustava u stvarnom vremenu.</p>
 
             <div class="timeline">
                 
                 <div class="step done">
                     <div class="step-content">
-                        <h3><i class="fas fa-lightbulb"></i> Ideja i Planiranje <span class="badge done">Završeno</span></h3>
-                        <p>Definiranje glavnih funkcionalnosti EcoCode aplikacije i dizajniranje korisničkog sučelja.</p>
+                        <h3>
+                            <span><i class="fas fa-lightbulb"></i> Ideja i Planiranje</span>
+                            <span class="badge done">Završeno</span>
+                        </h3>
+                        <p>Definiranje glavnih funkcionalnosti aplikacije, istraživanje tržišta i dizajniranje korisničkog sučelja (UI/UX).</p>
                     </div>
                 </div>
 
                 <div class="step done">
                     <div class="step-content">
-                        <h3><i class="fas fa-code"></i> Izrada Web Stranice <span class="badge done">Završeno</span></h3>
-                        <p>Web stranica za promociju je online. Autori: <span class="highlight">Noa Husić</span> i <span class="highlight">Lovro Crnković</span>.</p>
+                        <h3>
+                            <span><i class="fas fa-code"></i> Izrada Web Stranice</span>
+                            <span class="badge done">Završeno</span>
+                        </h3>
+                        <p>Web stranica za promociju i informacije je online. Autori: <span class="highlight">Noa Husić</span> i <span class="highlight">Lovro Crnković</span>.</p>
                     </div>
                 </div>
 
                 <div class="step done">
                     <div class="step-content">
-                        <h3><i class="fas fa-android"></i> Projekt u izradi (App) <span class="badge done">Završeno</span></h3>
-                        <p>Trenutno radimo na programiranju glavnih funkcija Android aplikacije u Android Studiju.</p>
+                        <h3>
+                            <span><i class="fas fa-android"></i> Razvoj Mobilne Aplikacije</span>
+                            <span class="badge done">Završeno</span>
+                        </h3>
+                        <p>Završena izrada osnovne arhitekture aplikacije u Android Studiju i integracija kalkulatora.</p>
                     </div>
                 </div>
 
                 <div class="step done">
                     <div class="step-content">
-                        <h3><i class="fas fa-file-alt"></i> Dokumentiranje</h3>
-                        <p>Pisanje tehničke dokumentacije i uputa za korisnike.</p>
-                    </div>
-                </div>
-
-                <div class="step done">
-                    <div class="step-content">
-                        <h3><i class="fas fa-vial"></i> Testiranje i Završavanje <span class="badge done">Završeno</span></h3>
-                        <p>Provjera bugova i optimizacija koda prije puštanja u rad.</p>
+                        <h3>
+                            <span><i class="fas fa-file-alt"></i> Dokumentiranje i Testiranje</span>
+                            <span class="badge done">Završeno</span>
+                        </h3>
+                        <p>Pisanje tehničke dokumentacije i otklanjanje početnih grešaka u kodu.</p>
                     </div>
                 </div>
 
                 <div class="step active">
                     <div class="step-content">
-                        <h3><i class="fas fa-rocket"></i> Zadnji korak: Objava <span class="badge process">U tijeku</span></h3>
-                        <p>Službeno lansiranje EcoCode aplikacije</p>
+                        <h3>
+                            <span><i class="fas fa-rocket"></i> Priprema za Objavu</span>
+                            <span class="badge process">U tijeku</span>
+                        </h3>
+                        <p>Završne optimizacije i priprema aplikacije za službeno lansiranje u EcoCode zajednicu.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <h3>
+                            <span><i class="fas fa-users"></i> Službeno Lansiranje</span>
+                        </h3>
+                        <p>Preuzimanje aplikacije i početak rada s prvim korisnicima.</p>
                     </div>
                 </div>
 
             </div>
-
-            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
-            
-           
         </div>
     </main>
 
-       <footer>
-       <p>© <span id="current-year"></span> EcoCode Tim. Sva prava pridržana.</p>
+    <footer>
+        <p>© <span id="current-year"></span> EcoCode Tim. Sva prava pridržana.</p>
     </footer>
-<script>
-        // Ova skripta uzima trenutnu godinu s tvog uređaja/poslužitelja
+
+    <script>
+        // Automatsko ažuriranje godine u footeru
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 
